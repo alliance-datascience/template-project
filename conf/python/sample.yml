@@ -1,0 +1,16 @@
+apiVersion: argoproj.io
+kind: Workflow
+metadata:
+  generateName: data-processing
+  project_name : "AGRILAC"
+  use_case: "ICC"
+  hints:
+    ResourceRequeriments:
+      python: 3.9
+      OS: Windows
+      Credentials: S3_AWS
+arguments_chirps:
+  start_date: "2023-06-01"
+  end_date: "2023-06-30"
+  raster: True  
+  output: "output_file"

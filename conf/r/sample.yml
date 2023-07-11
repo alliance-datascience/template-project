@@ -1,0 +1,23 @@
+apiVersion: argoproj.io
+kind: Workflow
+metadata:
+  generateName: data-processing
+  project_name : "AGWISE"
+  use_case: "GREPALMA"
+  hints:
+    ResourceRequeriments:
+      R: 4
+      OS: Windows
+      Credentials: S3_AWS
+arguments_chirps:
+  start_date: "2023-06-01"
+  end_date: "2023-06-30"
+  raster: True  
+  output: "output_file"
+arguments_isda:
+  x1: 9.57
+  x2: 10.55
+  y1: 11.55
+  y2: 12.43
+
+
